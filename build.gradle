@@ -1,20 +1,16 @@
-apply plugin: 'java'
-apply plugin: 'com.google.protobuf'
-
-buildscript {
-    repositories {
-        maven {
-            url "http://maven.aliyun.com/nexus/content/groups/public/" }
-    }
-    dependencies {
-        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.5'
-    }
+plugins {
+    id 'org.springframework.boot' version '2.5.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id "com.google.protobuf" version "0.8.17"
 }
 
+group = 'com.snowcattle'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
 repositories {
-    maven {
-        url "http://maven.aliyun.com/nexus/content/groups/public/" }
-    mavenLocal()
+    mavenCentral()
 }
 
 def grpcVersion = '1.14.0'
@@ -22,6 +18,20 @@ def nettyTcNativeVersion = '2.0.7.Final'
 def protobufVersion = '3.5.1'
 
 dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+//    implementation group: 'dom4j', name: 'dom4j', version: '1.6.1'
+//    implementation group: 'org.apache.poi', name: 'poi', version: '3.8'
+//    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '3.8'
+//    implementation group: 'org.apache.poi', name: 'poi-ooxml-schemas', version: '3.8'
+//    implementation group: 'org.apache.poi', name: 'poi-scratchpad', version: '3.8'
+//    implementation group: 'org.apache.xmlbeans', name: 'xmlbeans', version: '2.3.0'
+//    implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
+//    implementation group: 'com.alibaba', name: 'fastjson', version: '1.2.78'
+//    implementation group: 'com.google.guava', name: 'guava', version: '30.1.1-jre'
+//    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-freemarker', version: '2.5.4'
+//    implementation group: 'com.github.jsqlparser', name: 'jsqlparser', version: '4.1'
+
     compile "com.google.api.grpc:proto-google-common-protos:1.0.0"
     compile "io.grpc:grpc-alts:${grpcVersion}"
     compile "io.grpc:grpc-netty:${grpcVersion}"
@@ -31,6 +41,12 @@ dependencies {
     compileOnly "javax.annotation:javax.annotation-api:1.2"
     compile "io.netty:netty-tcnative-boringssl-static:${nettyTcNativeVersion}"
     compile "com.google.protobuf:protobuf-java-util:${protobufVersion}"
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
 }
 
 protobuf {
