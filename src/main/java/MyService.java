@@ -6,6 +6,7 @@ public class MyService extends GreeterGrpc.GreeterImplBase {
     @Override
     public void sayHello(HelloWorldProtos.HelloRequest request, StreamObserver<HelloWorldProtos.HelloReply> responseObserver) {
         HelloWorldProtos.HelloReply helloReply = HelloWorldProtos.HelloReply.newBuilder().setMessage("hello client.").build();
+        System.out.println("hello client");
         responseObserver.onNext(helloReply);
         responseObserver.onCompleted();
     }

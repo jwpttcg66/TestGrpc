@@ -27,6 +27,7 @@ dependencies {
     compile "io.grpc:grpc-netty:${grpcVersion}"
     compile "io.grpc:grpc-protobuf:${grpcVersion}"
     compile "io.grpc:grpc-stub:${grpcVersion}"
+    compile group: 'io.grpc', name: 'grpc-services', version: '1.13.1'
     compileOnly "javax.annotation:javax.annotation-api:1.2"
     compile "io.netty:netty-tcnative-boringssl-static:${nettyTcNativeVersion}"
     compile "com.google.protobuf:protobuf-java-util:${protobufVersion}"
