@@ -3,6 +3,7 @@ plugins {
 //    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
     id "com.google.protobuf" version "0.8.17"
+    id 'idea'
 }
 
 group = 'com.snowcattle'
@@ -49,12 +50,19 @@ protobuf {
         }
     }
 
-    generateProtoTasks.generatedFilesBaseDir = "src"
+    generateProtoTasks.generatedFilesBaseDir = "$buildDir/generated"
     generateProtoTasks {
         all()*.plugins {
             grpc {
 //                outputSubDir  = "grpc"
             }
         }
+    }
+}
+
+idea {
+    module {
+        // Marks the already(!) added srcDir as "generated"
+        generatedSourceDirs += file('$buildDir/generated')
     }
 }
