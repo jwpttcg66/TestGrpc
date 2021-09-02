@@ -1,6 +1,6 @@
 plugins {
-    id 'org.springframework.boot' version '2.5.3'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+//    id 'org.springframework.boot' version '2.5.3'
+//    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
     id "com.google.protobuf" version "0.8.17"
 }
@@ -18,8 +18,9 @@ def nettyTcNativeVersion = '2.0.7.Final'
 def protobufVersion = '3.5.1'
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
-    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+//    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-autoconfigure', version: '2.5.4'
+//    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
     implementation group: 'commons-cli', name: 'commons-cli', version: '1.4'
     compile "com.google.api.grpc:proto-google-common-protos:1.0.0"
     compile "io.grpc:grpc-alts:${grpcVersion}"
@@ -31,7 +32,7 @@ dependencies {
     compile "io.netty:netty-tcnative-boringssl-static:${nettyTcNativeVersion}"
     compile "com.google.protobuf:protobuf-java-util:${protobufVersion}"
 
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 test {
