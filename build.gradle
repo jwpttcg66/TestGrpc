@@ -31,6 +31,9 @@ dependencies {
     implementation group: 'org.springframework.boot', name: 'spring-boot-autoconfigure', version: '2.5.4'
 //    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
     implementation group: 'commons-cli', name: 'commons-cli', version: '1.4'
+    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.9.0'
+//    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.3'
+//    implementation group: 'io.projectreactor', name: 'reactor-core', version: '3.3.11.RELEASE'
     compile "com.google.api.grpc:proto-google-common-protos:1.0.0"
     compile "io.grpc:grpc-alts:${grpcVersion}"
     compile "io.grpc:grpc-netty:${grpcVersion}"
@@ -42,12 +45,8 @@ dependencies {
     compile "com.google.protobuf:protobuf-java-util:${protobufVersion}"
     implementation group: 'io.dapr', name: 'dapr-sdk-springboot', version: daprVersion
     implementation group: 'io.dapr', name: 'dapr-sdk', version: daprVersion
+//    implementation group: 'io.dapr', name: 'dapr-sdk-autogen', version: '1.2.0'
 
-    implementation group: 'io.dapr', name: 'dapr-sdk-autogen', version: '1.2.0'
-    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.9.0'
-    implementation group: 'com.squareup.okio', name: 'okio', version: '1.17.5'
-    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.3'
-    implementation group: 'io.projectreactor', name: 'reactor-core', version: '3.3.11.RELEASE'
 //    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
