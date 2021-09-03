@@ -30,7 +30,7 @@ import java.util.TimeZone;
  * dapr run --app-id hellogrpc --app-port 5000 --app-protocol grpc \
  *   -- java -jar target/dapr-java-sdk-examples-exec.jar io.dapr.examples.invoke.grpc.HelloWorldService -p 5000
  */
-public class DarGrpcService {
+public class DarHelloWorldGrpcService {
 
     /**
      * Server mode: class that encapsulates all server-side logic for Grpc.
