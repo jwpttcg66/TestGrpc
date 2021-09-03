@@ -1,6 +1,6 @@
 plugins {
-//    id 'org.springframework.boot' version '2.5.3'
-//    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'org.springframework.boot' version '2.5.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
     id "com.google.protobuf" version "0.8.17"
     id 'idea'
@@ -10,6 +10,7 @@ group = 'com.snowcattle'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+
 repositories {
     mavenCentral()
 }
@@ -17,6 +18,7 @@ repositories {
 def grpcVersion = '1.14.0'
 def nettyTcNativeVersion = '2.0.7.Final'
 def protobufVersion = '3.5.1'
+
 
 dependencies {
 //    implementation 'org.springframework.boot:spring-boot-starter'
@@ -66,3 +68,10 @@ idea {
         generatedSourceDirs += file('$buildDir/generated')
     }
 }
+
+bootJar {
+    mainClass = 'DaprMainApplication'
+}
+
+
+
