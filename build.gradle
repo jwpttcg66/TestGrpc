@@ -11,6 +11,8 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 repositories {
+    maven { url 'https://maven.aliyun.com/repository/public/' }
+    mavenLocal()
     mavenCentral()
 }
 
@@ -23,6 +25,7 @@ dependencies {
     implementation group: 'org.springframework.boot', name: 'spring-boot-autoconfigure', version: '2.5.4'
 //    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
     implementation group: 'commons-cli', name: 'commons-cli', version: '1.4'
+    implementation group: 'com.googlecode.protobuf-java-format', name: 'protobuf-java-format', version: '1.4'
     compile "com.google.api.grpc:proto-google-common-protos:1.0.0"
     compile "io.grpc:grpc-alts:${grpcVersion}"
     compile "io.grpc:grpc-netty:${grpcVersion}"
@@ -32,6 +35,7 @@ dependencies {
     compileOnly "javax.annotation:javax.annotation-api:1.2"
     compile "io.netty:netty-tcnative-boringssl-static:${nettyTcNativeVersion}"
     compile "com.google.protobuf:protobuf-java-util:${protobufVersion}"
+
 
 //    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
